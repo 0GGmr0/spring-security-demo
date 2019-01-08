@@ -1,0 +1,19 @@
+server:
+  servlet:
+    context-path: /api
+  port: 8080
+
+spring:
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/security_demo?characterEncoding=utf-8&useSSL=true
+
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: com.demo.spring.security.model.entity
+
+
+
