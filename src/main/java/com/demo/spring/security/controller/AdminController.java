@@ -1,6 +1,7 @@
 package com.demo.spring.security.controller;
 
 import com.demo.spring.security.model.vo.Result;
+import com.demo.spring.security.security.UserContext;
 import com.demo.spring.security.tools.ResultTool;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +19,7 @@ public class AdminController {
 
     @GetMapping("/hello")
     public Result helloWorld() {
-        return ResultTool.success("管理员权限验证成功");
+        String username = UserContext.getCurrentUser().getUsername();
+        return ResultTool.success("管理员权限验证成功,管理员id为" + username);
     }
 }
